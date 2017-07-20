@@ -5,9 +5,9 @@ Android 的四大组件分别是活动，服务，广播接收器，内容提供
 
 ### 第二章 探究活动
 #### 创建活动时几个可勾选的按钮代表的意思
-1.Generate Layout File会自动为活动创建一个对应的布局文件
-2.Laucher Activity会自动将此活动设置为当前项目的主活动
-3.Backwards Compatibility会自动为项目启用向下兼容的模式（一般需要勾选）
+1. Generate Layout File会自动为活动创建一个对应的布局文件
+2. Laucher Activity会自动将此活动设置为当前项目的主活动
+3. Backwards Compatibility会自动为项目启用向下兼容的模式（一般需要勾选）
 
 
 
