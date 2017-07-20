@@ -50,6 +50,9 @@ public class 活动名 extends AppCompatActivity {
 2. match_parent代表当前元素和父元素一样宽
 3. wrap_content表示当前元素的高度刚好包含里面的内容
 
+- 调用布局
+`setContentView(R.layout.布局名)`
+
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
