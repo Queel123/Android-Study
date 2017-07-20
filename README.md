@@ -40,6 +40,7 @@ public class 活动名 extends AppCompatActivity {
 	
 </LinearLayout>
 '''
+
 1. android:text指定了元素中显示的文字内容
 2. match_parent代表当前元素和父元素一样宽
 3. wrap_content表示当前元素的高度刚好包含里面的内容
