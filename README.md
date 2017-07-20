@@ -25,8 +25,8 @@ public class 活动名 extends AppCompatActivity {
 3. Design切换卡显示可视化布局编辑器，可以预览布局
 4. Text通过XML的方式来编辑布局
 #### 简单布局
-'''
-<LinearLayout xmlns:android="ht1tp://schemas.android.com/apk/res/android"
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
@@ -39,7 +39,7 @@ public class 活动名 extends AppCompatActivity {
 	/>
 	
 </LinearLayout>
-'''
+```
 
 1. android:text指定了元素中显示的文字内容
 2. match_parent代表当前元素和父元素一样宽
