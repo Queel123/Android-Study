@@ -26,7 +26,7 @@ public class 活动名 extends AppCompatActivity {
 4. Text通过XML的方式来编辑布局
 #### 简单布局
 '''
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="ht1tp://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
