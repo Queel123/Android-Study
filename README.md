@@ -19,9 +19,30 @@ public class 活动名 extends AppCompatActivity {
 
 }
 ```
-
-
-
+#### 创建布局
+1. File name: 布局名
+2. Root element: 根元素 （比如LinearLayout）
+3. Design切换卡显示可视化布局编辑器，可以预览布局
+4. Text通过XML的方式来编辑布局
+#### 简单布局
+'''
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+ 
+ <Button
+	android:id="@+id/button_1"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:text="Button 1"
+	/>
+	
+</LinearLayout>
+'''
+1. android:text指定了元素中显示的文字内容
+2. match_parent代表当前元素和父元素一样宽
+3. wrap_content表示当前元素的高度刚好包含里面的内容
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
