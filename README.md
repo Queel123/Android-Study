@@ -8,7 +8,17 @@ Android 的四大组件分别是活动，服务，广播接收器，内容提供
 1. Generate Layout File会自动为活动创建一个对应的布局文件
 2. Laucher Activity会自动将此活动设置为当前项目的主活动
 3. Backwards Compatibility会自动为项目启用向下兼容的模式（一般需要勾选）
+#### 重写Activity的onCreate()方法
+```
+public class 活动名 extends AppCompatActivity {
 
+  @Override       //代表重写父类函数
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+  }
+
+}
+```
 
 
 
