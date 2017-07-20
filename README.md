@@ -147,6 +147,42 @@ protected void onCreate(Bundle savedInstanceState) {
     }
 ```
 
+#### 销毁一个活动
+- 调用finish(void)函数
+
+#### 显式Intent的使用
+- 从FirstActivity跳转到SecondActivity 需要的步骤
+
+```
+ button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+	       startActivity(intent);
+
+            }
+ });
+```
+
+#### 隐式Intent的使用
+- 从FirstActivity跳转到SecondActivity 需要的步骤
+- 修改AndroidManifest.xml
+```
+<intent-filter>
+	<action android:name="com.example.activitytest.ACTION_START"/>
+	<category android:name="android.intent.category.DEFAULT"/>
+</intent-filter>
+```
+```
+ button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent("com.example.activitytest.ACTION_START");
+	       startActivity(intent);
+            }
+ });
+```
+
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
