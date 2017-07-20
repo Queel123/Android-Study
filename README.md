@@ -53,6 +53,64 @@ public class 活动名 extends AppCompatActivity {
 - 调用布局
 `setContentView(R.layout.布局名)`
 
+#### 在AndroidManifest文件中注册
+
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.example.activitytest">
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		andorid:theme="@style/AppTheme">
+		<activity android:name=".FirstActivity"></activity>
+	</application>
+</manifest>
+```
+
+#### 配置主活动的方法
+- label 指定了标题栏中的内容，也是Launcher中应用程序显示的名称
+
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.example.activitytest">
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		andorid:theme="@style/AppTheme">
+		<activity android:name=".FirstActivity"
+			android:label="This is FirstActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
+</manifest>
+```
+
+#### Toast的使用方法
+- Toast 在程序中将一些短小的信息通知给用户，这些信息会在一段时间后自动消失
+
+```
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.布局名)
+	Button button1 = (Button) findViewById(R.id.button_1);
+	button1.setOnClickListener(new View.OnClickLisetener() {
+		@Override
+		public void onClick(View v) {
+			Toast.makeText(FirstActivity.this, "You clicked Button 1",
+				Toast.LENGTH_SHORT).show();
+		}
+	});
+}
+```
+
+#### 
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
