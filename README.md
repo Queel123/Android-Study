@@ -183,6 +183,22 @@ protected void onCreate(Bundle savedInstanceState) {
  });
 ```
 
+#### 隐式Intent的导入网页用法
+- Android系统内置的动作Intent.ACTION_VIEW
+- Uri.parse()方法可以将网址字符串解析成Uri对象
+- Intent的SetData()方法将这个Uri对象传递进去
+
+```
+ button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(Intent.ACTION_VIEW);
+	       Intent.setData(Uri.parse("http://www.baidu.com"));
+	       startActivity(intent);
+            }
+ });
+```
+
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
