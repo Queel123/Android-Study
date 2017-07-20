@@ -199,6 +199,45 @@ protected void onCreate(Bundle savedInstanceState) {
  });
 ```
 
+#### 向下一个活动传递数据
+- putExtra()方法接收两个参数，第一个参数是键，用于后面从Intent中取值
+- 第二个参数是真正要传递的数据
+
+- 传递数据
+```
+button1.setOnClickListener(new View.OnClickListener() {
+      	@Override
+        public void onClick(View v) {
+	    String data = "xxx"; 
+		Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+		Intent.putExtra("extra_data", data);
+		startActivity(intent);
+	}
+});
+```
+
+- 传递字符串 getStringExtra()
+- 传递整型 getIntExtra()
+- 传递布尔型 getBooleanExtra()
+- 取出数据
+```
+public class 活动名 extends AppCompatActivity {
+
+  @Override       //代表重写父类函数
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+	setContentView(R.layout.second_layout);
+	Intent intent = get Intent();
+	String data = intent.getStringExtra("extra_data");
+	Log.d("SecondActivity", data);
+  }
+
+}
+```
+
+#### 返回数据给上一个活动
+
+
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
