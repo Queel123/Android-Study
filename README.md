@@ -237,6 +237,67 @@ public class 活动名 extends AppCompatActivity {
 
 #### 返回数据给上一个活动
 
+```
+ button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+	       startActivityForResult(intent, 1);	//此处的1是请求码
+
+            }
+ });
+```
+- startActivityForResult()方法接收两个参数，第一个参数还是Intent，第二个参数是请求码，用于在回调中判断数据来源
+- setResult()方法接收两个参数，第一个参数用于向上一个活动返回处理结果
+- 一般只使用RESULT_OK或RESULT_CANCELED这两个值
+- 第二参数将带有数据的Intent传递回去
+- 使用startActivityForResult()方法启动下一个活动的时候，在下一个活动被销毁的时候
+- 会回调上一个活动的onActivityResult()方法，需要在上一个活动中重写这个方法来得到返回的数据
+- onActivityResult()方法有三个参数
+1. 第一个参数requestCode，即启动活动的请求码
+2. 第二个参数resultCode，即下一个活动返回的处理结果
+3. 第三个参数data，即携带着数据的Intent
+
+```
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 1:
+                if (resultCode == RESULT_OK) {
+                    String returnedData = data.getStringExtra("data_return");
+                    Log.d("FirstActivity", returnedData);
+                }
+                break;
+            default:
+        }
+    }
+```
+
+- 需要改变Back键的返回函数效果时可以在活动中重写onBackPressed()方法
+
+#### 活动的生命周期
+- 返回栈
+- 活动状态
+1. 运行状态
+- 活动位于栈顶
+2. 暂停状态
+- 活动不位于栈顶，但依然可见
+3. 停止状态
+- 活动不位于栈顶，且不可见
+4. 销毁状态
+- 活动从返回栈中移除
+
+#### 活动的生存期
+- Activity类中定义了7个回调方法，覆盖了活动生命周期的每一个环节
+1. onCreate()
+
+
+
+
+
+
+
+
 
 ### 第九章 使用网络技术
 
