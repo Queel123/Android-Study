@@ -298,7 +298,8 @@ public class 活动名 extends AppCompatActivity {
 4. onPause()
 - 在系统准备去启动或者恢复另一个活动的时候调用
 5. onStop()
-- 在活动完全不可见的时候调用
+- 在活动完全不可见的时候调用，如果启动的新活动是一个对话框式活动
+- 那么onPause()会调用，而onStop不调用
 6. onDestroy()
 - 在活动被销毁前调用，使活动变为销毁状态
 7. onRestart()
@@ -313,7 +314,30 @@ public class 活动名 extends AppCompatActivity {
 - onResume和onPause之间
 ![生命周期示意图](http://images2015.cnblogs.com/blog/15207/201512/15207-20151230134402026-2097191680.jpg)
 
+#### 对话框窗口的设置
+- 在AndroidManifest.xml中的<activity>标签中加入
+`android:theme="@android:style/Theme.Dialog"`
 
+#### 保存临时数据
+- onSaveInstanceState()回调方法
+- putString类似putStringExtra
+```
+@Override
+protected void onSaveInstanceState(Bundle outState) {
+	super.onSaveInstanceState(outState);
+	String tempData = "Something you just typed";
+	outState.putString("data_key", tempData)
+}
+```
+
+#### 日志函数log
+- Log.d(tag, msg)
+1. tag指当前类名，对打印信息进行过滤
+2. msg指想打印的具体内容
+
+
+
+#### 活动的启动模式
 
 
 ### 第九章 使用网络技术
