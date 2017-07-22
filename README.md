@@ -380,6 +380,78 @@ public static void actionStart(Context context, String data1, String data2) {
 }
 ```
 
+### 第三章 UI开发
+#### TextView
+1. android:id
+- 控件标识符
+2. android:layout_width
+- 指定宽度
+3. android:layout_height
+- 指定高度
+4. android:text
+- 指定文本内容
+5. android:gravity
+- 指定文字对齐方式
+- 可选top, bottom, left, right, center
+6. android:textSize
+- 指定文字大小，以sp为单位
+7. android:textColor
+- 指定文字颜色
+- 需要用到时查阅文档即可！！！
+
+#### Button
+1. android:textAllCaps="false"
+- 可以禁用buttonID里的字母自动大写转换
+2. 可以通过接口的写法实现对按钮点击事件的监听
+
+#### EditText
+1. android:hint
+- 在输入框中加入一些默认的提示性文字
+2. android:maxLines
+- 指定最大行数，如果输入内容超过这个值时，文本会向上滚动，而EditText不会再拉伸
+
+#### ImageView
+1. android:src
+- 指定图片
+2. imageView.setImageResource(R.drawable.新图片的图片名)
+- 更新图片
+
+#### AlertDialog
+```
+AlertDialog.Builder dialog = new AlertDialog.Builder(活动名.this);
+dialog.setTitle("对话框名");
+dialog.setMessage("显示内容");
+dialog.setCancelable(false);	//设置不可取消，代表无法通过back键返回
+dialog.setPositiveButton("OK", new DialogInterface.
+	OnClickListener() {
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+	}
+});
+dialog.setNegativeButton("CANCEL", new DialogInterface.
+	OnClickListener() {
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+	}
+});
+dialog.show();
+```
+
+#### 四种基本布局
+
+#### ProgressBar
+- 用于显示进度条
+1. android:visibility
+- 三种可选值 View.GONE, View.VISIBLE, View.INVISIBLE
+2. getVisibility()方法获取可视化值
+3. android:max
+- 给进度条设置最大值，可以再代码中动态地改变进度条的进度
+4. style属性决定不同的样式
+
+#### ProgressDialog
+- 与AlertDialog对话框类似
+
+
 
 ### 第九章 使用网络技术
 
