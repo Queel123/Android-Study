@@ -368,6 +368,18 @@ protected void onSaveInstanceState(Bundle outState) {
 - 杀掉进程的方法
 `android.os.Precess.killProcess(android.os.Process.myPid());`
 
+#### 启动活动的最佳写法
+- 尽量将一个活动里所执行的东西封装成一个函数，方便其他函数调用
+
+```
+public static void actionStart(Context context, String data1, String data2) {
+	Intent intent = new Intent(context, SecondActivity.class);
+	intent.putExtra("param1", data1);
+	intent.putExtra("param2", data2);
+	context.startActivity(intent);
+}
+```
+
 
 ### 第九章 使用网络技术
 
