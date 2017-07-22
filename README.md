@@ -338,6 +338,35 @@ protected void onSaveInstanceState(Bundle outState) {
 
 
 #### 活动的启动模式
+1. standard
+2. singleTop
+3. singleTask
+4. singleInstance
+- 通过在AndroidManifest.xml中给<activity>标签指定android:launchMode属性来指定启动模式
+
+#### standard
+- 默认启动模式
+- 每次启动活动时会创建一个新的活动实例
+
+#### singleTop
+- 启动活动时发现返回栈栈顶已经是该活动，则认为可以直接使用它，不会再新建活动实例
+
+#### singleTask
+- 每次启动活动时系统首先在返回栈中检查是否存在该活动的实例，若已存在则直接使用该
+- 实例，并且将此活动上的所有活动统统出栈
+
+#### singleInstance
+- 启动该活动时会新建一个活动栈，此活动栈与其他活动无关
+
+#### 知晓现在运行到哪一个活动
+- 加入一个BaseActivity
+- 让它成为项目中所有活动的父类
+- 并且在onCreate()方法中加入Log.d("BaseActivity", getClass().getSimpleName());
+
+#### 退出所有活动
+- 加入一个活动管理器ActivityCollector类
+- 杀掉进程的方法
+`android.os.Precess.killProcess(android.os.Process.myPid());`
 
 
 ### 第九章 使用网络技术
