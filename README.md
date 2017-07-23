@@ -451,18 +451,41 @@ dialog.show();
 
 #### 四种基本布局
 1. 线性布局 LinearLayout
-> android:layout_weight将所有控件指定的layout_weight值相加，得到总值再分配
-> 此时需将所控制的宽度或者高度 置为 0dp
+- 此布局会将它包含的控件在线性方向上一次排列
+- android:layout_weight将所有控件指定的layout_weight值相加，得到总值再分配
+- 此时需将所控制的宽度或者高度 置为 0dp
 
 2. 相对布局 RelativeLayout
-> android:layout_alighParentLeft
-> android:layout_alighParentRight
-> android:layout_alighParentTop
-> android:layout_alighParentBottom
+- 此布局方式以相对定位的方式使控件可以出现在布局的任何位置
+- 以下四个是通过父布局定位的属性 后接true/false
+- android:layout_alighParentLeft
+- android:layout_alighParentRight
+- android:layout_alighParentTop
+- android:layout_alighParentBottom
+- android:layout_centerInParent
 
+- 以下四个是通过控件定位的属性 后接="@id/控件id"
+- android:layout_below
+- android:layout_above
+- android:layout_toRightOf
+- android:layout_toLeftOf
 
+3. 帧布局 FrameLayout
+- 所有的控件都会默认摆放在布局的左上角
+- android:layout_gravity="right/left"
+- 可以指定控件在布局中居左对齐或者居右对齐
 
-
+4. 百分比布局 PrecentFrameLayout
+- android:layout_widthPercent
+- android:layout_heightPercent
+- android:layout_gravity
+'''
+<android.support.percent.PercentFrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	>
+</android.support.percent.PercentFrameLayout>
+'''
 
 ### 第九章 使用网络技术
 
