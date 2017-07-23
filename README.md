@@ -437,8 +437,6 @@ dialog.setNegativeButton("CANCEL", new DialogInterface.
 dialog.show();
 ```
 
-#### 四种基本布局
-
 #### ProgressBar
 - 用于显示进度条
 1. android:visibility
@@ -450,6 +448,19 @@ dialog.show();
 
 #### ProgressDialog
 - 与AlertDialog对话框类似
+
+#### 四种基本布局
+1. 线性布局 LinearLayout
+> android:layout_weight将所有控件指定的layout_weight值相加，得到总值再分配
+> 此时需将所控制的宽度或者高度 置为 0dp
+
+2. 相对布局 RelativeLayout
+> android:layout_alighParentLeft
+> android:layout_alighParentRight
+> android:layout_alighParentTop
+> android:layout_alighParentBottom
+
+
 
 
 
