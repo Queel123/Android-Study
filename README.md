@@ -487,6 +487,25 @@ dialog.show();
 </android.support.percent.PercentFrameLayout>
 ```
 
+#### 自定义控件
+- android:layout_margin 可以指定控件在上下左右方向上偏离的距离
+- android:layout_background 可以为布局或控件指定一个背景
+- 可以先新建一个布局
+- 然后在活动的布局中引入我们所写的布局（例如：标题栏布局）
+`<include layout="@layout/title" />`
+
+- 隐藏标题栏的方法
+```
+ActionBar actionbar = getSupportActionBar();
+if (actionbar != null) {
+	actionbar.hide();
+}
+```
+
+#### ListView
+
+
+
 ### 第九章 使用网络技术
 
 - 访问网络时需要声明权限，需要修改AndroidManifest.xml文件，并加入权限声明
