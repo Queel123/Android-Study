@@ -479,13 +479,13 @@ dialog.show();
 - android:layout_widthPercent
 - android:layout_heightPercent
 - android:layout_gravity
-'''
+```
 <android.support.percent.PercentFrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	>
 </android.support.percent.PercentFrameLayout>
-'''
+```
 
 ### 第九章 使用网络技术
 
